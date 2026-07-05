@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Cosmo Customer Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:        #0f0f1a;
+      --ink-soft:   #4a4a6a;
+      --ink-muted:  #8888aa;
+      --surface:    #f5f5fb;
+      --card:       #ffffff;
+      --accent:     #5b3cf5;
+      --accent-mid: #7c5cfc;
+      --accent-glow:#ede8ff;
+      --teal:       #0ea5a0;
+      --border:     #e8e8f0;
+      --radius-lg:  18px;
+      --radius-md:  10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--ink);
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--teal));
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 17px; font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px; font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+
+    .header-badge {
+      margin-left: auto;
+      font-size: 11.5px;
+      color: var(--accent-mid);
+      background: rgba(91,60,245,0.18);
+      border: 1px solid rgba(91,60,245,0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── HERO STRIP ── */
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
+      padding: 52px 40px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+    }
+
+    .hero-meta::before { content: '🗓'; font-size: 13px; }
+
+    /* ── TOC SIDEBAR LAYOUT ── */
+    .page-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* ── TABLE OF CONTENTS ── */
+    .toc {
+      position: sticky;
+      top: 88px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 7px;
+      transition: background 0.15s, color 0.15s;
+      line-height: 1.4;
+    }
+
+    .toc a:hover {
+      background: var(--accent-glow);
+      color: var(--accent);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content { min-width: 0; }
+
+    .policy-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 52px;
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      font-size: 15.5px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      border-left: 3px solid var(--accent);
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    .section { margin-top: 44px; }
+    .section:first-child { margin-top: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      width: 34px; height: 34px;
+      background: var(--accent-glow);
+      border-radius: 9px;
+      display: grid; place-items: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.2px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 2px 8px;
+      border-radius: 5px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    p { color: var(--ink-soft); margin-bottom: 12px; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── DEFINITION TABLE ── */
+    .def-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    .def-table tr { border-bottom: 1px solid var(--border); }
+    .def-table tr:last-child { border-bottom: none; }
+    .def-table td { padding: 10px 12px; font-size: 14px; vertical-align: top; }
+    .def-table td:first-child {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      width: 160px;
+    }
+    .def-table td:last-child { color: var(--ink-soft); }
+
+    /* ── LISTS ── */
+    .policy-list { list-style: none; margin: 12px 0 16px; padding: 0; }
+    .policy-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14.5px;
+      color: var(--ink-soft);
+    }
+    .policy-list li:last-child { border-bottom: none; }
+    .policy-list li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ── COOKIE TABLE ── */
+    .cookie-grid { display: grid; gap: 12px; margin: 16px 0; }
+    .cookie-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+    }
+    .cookie-item strong {
+      display: block;
+      font-size: 13.5px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .cookie-meta {
+      display: flex; gap: 8px; margin-bottom: 6px; flex-wrap: wrap;
+    }
+    .cookie-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    .tag-session { background: #e8f4ff; color: #0066cc; }
+    .tag-persist { background: #eeffed; color: #008833; }
+    .cookie-item p { font-size: 13.5px; margin: 0; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .info-box {
+      background: var(--accent-glow);
+      border: 1px solid rgba(91,60,245,0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #3a2a8a;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .info-box::before { content: '💡'; font-size: 16px; flex-shrink: 0; }
+
+    .warn-box {
+      background: #fff8ed;
+      border: 1px solid #fcd97a;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #7a4f00;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .warn-box::before { content: '⚠️'; font-size: 16px; flex-shrink: 0; }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 16px 0;
+    }
+    .right-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .right-item span:first-child { font-size: 16px; flex-shrink: 0; }
+
+    /* ── WEBHOOK CARDS ── */
+    .webhook-list { display: grid; gap: 10px; margin: 14px 0; }
+    .webhook-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+    }
+    .webhook-tag {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      background: var(--ink);
+      color: var(--teal);
+      padding: 3px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .webhook-item p { font-size: 13.5px; margin: 0; }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--ink) 0%, #1e1040 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .contact-icon {
+      width: 56px; height: 56px;
+      background: rgba(91,60,245,0.3);
+      border-radius: 16px;
+      display: grid; place-items: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+    .contact-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .contact-card p { color: rgba(255,255,255,0.6); font-size: 14px; margin: 0 0 12px; }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(91,60,245,0.35);
+      border: 1px solid rgba(91,60,245,0.5);
+      border-radius: 8px;
+      padding: 10px 18px;
+      color: #c4b8ff;
+      font-size: 14.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .contact-email:hover { background: rgba(91,60,245,0.55); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      color: var(--ink-muted);
+      font-size: 13px;
+      padding: 32px 24px 48px;
+    }
+    footer span { color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .page-wrap { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .policy-card { padding: 28px 24px; }
+      header { padding: 0 20px; }
+      .header-badge { display: none; }
+      .hero { padding: 36px 24px; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .contact-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-mark">C</div>
+  <div class="header-title">Cosmo Customer Account</div>
+  <div class="header-badge">by Cosmoverse Apps</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Legal Documentation</div>
+  <h1>Privacy Policy</h1>
+  <div class="hero-meta">Last updated: July 6, 2026</div>
+</div>
+
+<!-- PAGE LAYOUT -->
+<div class="page-wrap">
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <a href="#interpretation">Interpretation & Definitions</a>
+    <a href="#collection">Data We Collect</a>
+    <a href="#tracking">Tracking & Cookies</a>
+    <a href="#use">How We Use Data</a>
+    <a href="#retention">Data Retention</a>
+    <a href="#transfer">Data Transfer</a>
+    <a href="#disclosure">Disclosure</a>
+    <a href="#security">Security</a>
+    <a href="#rights">Your Rights</a>
+    <a href="#webhooks">Shopify Webhooks</a>
+    <a href="#children">Children's Privacy</a>
+    <a href="#links">Third-Party Links</a>
+    <a href="#changes">Policy Changes</a>
+    <a href="#contact">Contact Us</a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <div class="policy-card">
+      <p class="intro-text">
+        This Privacy Policy describes how <strong>Cosmoverse Apps</strong> ("we", "us", or "our") collects, uses, and discloses your information when you use <strong>Cosmo Customer Account</strong> — our Shopify application — and tells you about your privacy rights and how the law protects you. By installing and using the app, you agree to the collection and use of information in accordance with this policy.
+      </p>
+    </div>
+
+    <!-- 1. INTERPRETATION -->
+    <div class="policy-card" id="interpretation">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">📖</div>
+          <h2>Interpretation &amp; Definitions</h2>
+          <span class="section-num">01</span>
+        </div>
+        <p>Words with a capitalized initial letter have meanings defined below. These definitions apply whether the term appears in singular or plural form.</p>
+        <table class="def-table">
+          <tr><td>Account</td><td>A unique account created for you to access the Service or parts of it.</td></tr>
+          <tr><td>Company</td><td>Cosmoverse Apps ("we", "us", or "our"), the developer of Cosmo Customer Account.</td></tr>
+          <tr><td>App / Service</td><td>The Cosmo Customer Account Shopify application, available on the Shopify App Store.</td></tr>
+          <tr><td>Cookies</td><td>Small files placed on your device by a website, containing browsing history details and other usage information.</td></tr>
+          <tr><td>Device</td><td>Any device used to access the Service — computer, phone, or tablet.</td></tr>
+          <tr><td>Merchant</td><td>The Shopify store owner who installs and uses Cosmo Customer Account.</td></tr>
+          <tr><td>Personal Data</td><td>Any information that relates to an identified or identifiable individual.</td></tr>
+          <tr><td>Usage Data</td><td>Data collected automatically — generated by use of the Service or from its infrastructure.</td></tr>
+          <tr><td>You</td><td>The individual or business entity accessing or using the Service (typically a Shopify merchant).</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2. DATA COLLECTION -->
+    <div class="policy-card" id="collection">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🗂️</div>
+          <h2>Data We Collect</h2>
+          <span class="section-num">02</span>
+        </div>
+
+        <p><strong>Personal Data</strong> — While using our Service, we may collect the following personally identifiable information:</p>
+        <ul class="policy-list">
+          <li>Merchant email address and shop name</li>
+          <li>Shop domain and Shopify store ID</li>
+          <li>Customer order data (order ID, status, tracking information)</li>
+          <li>Customer account data — wishlists, store credit balances, and account preferences</li>
+          <li>App configuration and onboarding settings set by the merchant</li>
+        </ul>
+
+        <p style="margin-top:18px;"><strong>Usage Data</strong> — Collected automatically when you use the Service, and may include:</p>
+        <ul class="policy-list">
+          <li>Device IP address, browser type and version</li>
+          <li>Pages and features accessed within the app, and time spent</li>
+          <li>Unique device identifiers and diagnostic data</li>
+          <li>App analytics events (feature interactions, dashboard views)</li>
+          <li>Automated activity logs related to your use of the app</li>
+        </ul>
+
+        <div class="info-box">
+          We collect only the minimum data necessary to deliver the app's core functionality to merchants and their customers.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. TRACKING & COOKIES -->
+    <div class="policy-card" id="tracking">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🍪</div>
+          <h2>Tracking Technologies &amp; Cookies</h2>
+          <span class="section-num">03</span>
+        </div>
+        <p>We use cookies and similar tracking technologies to operate the Service and gather usage insights. Technologies used include beacons, tags, and scripts.</p>
+
+        <div class="cookie-grid">
+          <div class="cookie-item">
+            <strong>Essential / Necessary Cookies</strong>
+            <div class="cookie-meta">
+              <span class="cookie-tag tag-session">Session Cookie</span>
+              <span class="cookie-tag" style="background:#f0f0ff;color:#5b3cf5;">Administered by Us</span>
+            </div>
+            <p>Required to provide core app features and authenticate merchant sessions. Without these, the Service cannot function.</p>
+          </div>
+          <div class="cookie-item">
+            <strong>Cookie Consent Cookies</strong>
+            <div class="cookie-meta">
+              <span class="cookie-tag tag-persist">Persistent Cookie</span>
+              <span class="cookie-tag" style="background:#f0f0ff;color:#5b3cf5;">Administered by Us</span>
+            </div>
+            <p>Records whether you have accepted the use of cookies on the Service.</p>
+          </div>
+          <div class="cookie-item">
+            <strong>Functionality Cookies</strong>
+            <div class="cookie-meta">
+              <span class="cookie-tag tag-persist">Persistent Cookie</span>
+              <span class="cookie-tag" style="background:#f0f0ff;color:#5b3cf5;">Administered by Us</span>
+            </div>
+            <p>Remembers your preferences (e.g., language, layout choices) to provide a more personalized experience across sessions.</p>
+          </div>
+        </div>
+
+        <p>You can instruct your browser to refuse all cookies or to alert you when cookies are being sent. However, some parts of the Service may not function correctly if cookies are disabled.</p>
+      </div>
+    </div>
+
+    <!-- 4. USE OF DATA -->
+    <div class="policy-card" id="use">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">⚙️</div>
+          <h2>How We Use Your Data</h2>
+          <span class="section-num">04</span>
+        </div>
+        <p>Cosmoverse Apps may use collected Personal Data for the following purposes:</p>
+        <ul class="policy-list">
+          <li><strong>To provide and operate the Service</strong> — including order tracking, wishlist, store credit, and the customer account portal.</li>
+          <li><strong>To manage your account</strong> — enabling access to all app features available to registered merchants.</li>
+          <li><strong>To fulfill contractual obligations</strong> — processing your subscription plan and app billing through Shopify's Billing API.</li>
+          <li><strong>To contact you</strong> — sending transactional emails, security alerts, billing notices, and support responses.</li>
+          <li><strong>To send app updates</strong> — informing you of new features, improvements, or changes to the Service.</li>
+          <li><strong>To manage your support requests</strong> — responding to tickets and queries submitted via email or live chat.</li>
+          <li><strong>For analytics and improvement</strong> — understanding usage patterns to improve app performance, features, and merchant experience.</li>
+          <li><strong>For business continuity</strong> — in the event of a merger, acquisition, or asset sale, your data may be transferred with appropriate notice.</li>
+        </ul>
+
+        <p style="margin-top:18px;"><strong>We may share your information in the following situations:</strong></p>
+        <ul class="policy-list">
+          <li><strong>With Service Providers</strong> — MongoDB Atlas (database), Fly.io (hosting), and Tawk.to (live chat support) — limited to what is necessary for the Service.</li>
+          <li><strong>With Shopify</strong> — as required to operate within the Shopify platform and comply with its Partner Program Agreement.</li>
+          <li><strong>For business transfers</strong> — in connection with any merger, acquisition, or sale of assets, with prior notice to you.</li>
+          <li><strong>With your consent</strong> — for any other purpose, only with your explicit approval.</li>
+        </ul>
+
+        <div class="warn-box">
+          We do <strong>not sell</strong> your personal data or your customers' data to any third party, ever.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. RETENTION -->
+    <div class="policy-card" id="retention">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🗄️</div>
+          <h2>Data Retention</h2>
+          <span class="section-num">05</span>
+        </div>
+        <p>We retain your Personal Data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy — or as required by law to resolve disputes and enforce agreements.</p>
+        <ul class="policy-list">
+          <li>Shop and merchant data is retained while the app remains installed on your store.</li>
+          <li>Upon uninstallation, shop data is scheduled for permanent deletion within <strong>48 hours</strong>.</li>
+          <li>Customer data associated with your store is permanently erased from our database upon a valid redaction request.</li>
+          <li>Usage and analytics data is retained in anonymized form for a shorter period unless required for security or legal compliance.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6. TRANSFER -->
+    <div class="policy-card" id="transfer">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🌏</div>
+          <h2>Transfer of Your Data</h2>
+          <span class="section-num">06</span>
+        </div>
+        <p>Your data — including Personal Data — is processed and stored on our infrastructure hosted in the <strong>Singapore region</strong> (Fly.io) and <strong>MongoDB Atlas</strong> cloud servers. This means your data may be maintained on servers outside your state, province, or country, where data protection laws may differ.</p>
+        <p>Your installation of the app and acceptance of this Privacy Policy represents your consent to this transfer. We take all reasonable steps to ensure your data is treated securely. No transfer of Personal Data will take place to any organization or country unless adequate security controls are in place.</p>
+      </div>
+    </div>
+
+    <!-- 7. DISCLOSURE -->
+    <div class="policy-card" id="disclosure">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">📢</div>
+          <h2>Disclosure of Your Data</h2>
+          <span class="section-num">07</span>
+        </div>
+        <p><strong>Business Transactions —</strong> If Cosmoverse Apps is involved in a merger, acquisition, or asset sale, your Personal Data may be transferred. We will provide notice before your data becomes subject to a different privacy policy.</p>
+        <p><strong>Law Enforcement —</strong> Under certain circumstances, we may be required to disclose your Personal Data in response to valid requests by public authorities (e.g., a court or government agency).</p>
+        <p><strong>Other Legal Requirements —</strong> We may disclose your Personal Data in good faith when necessary to:</p>
+        <ul class="policy-list">
+          <li>Comply with a legal obligation</li>
+          <li>Protect and defend the rights or property of Cosmoverse Apps</li>
+          <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+          <li>Protect the personal safety of users of the Service or the public</li>
+          <li>Guard against legal liability</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 8. SECURITY -->
+    <div class="policy-card" id="security">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🔒</div>
+          <h2>Security of Your Data</h2>
+          <span class="section-num">08</span>
+        </div>
+        <p>The security of your Personal Data is important to us. We implement industry-standard measures including:</p>
+        <ul class="policy-list">
+          <li>Encryption of all data in transit via HTTPS / TLS</li>
+          <li>Encryption of data at rest on MongoDB Atlas</li>
+          <li>Restricted access controls — only authorized systems can access merchant data</li>
+          <li>Regular security monitoring and review of our infrastructure</li>
+        </ul>
+        <div class="warn-box">
+          No method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security.
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. YOUR RIGHTS -->
+    <div class="policy-card" id="rights">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">⚖️</div>
+          <h2>Your Rights</h2>
+          <span class="section-num">09</span>
+        </div>
+        <p>Depending on your location, you or your customers may have the following rights under applicable privacy laws (GDPR, CPRA, and others):</p>
+        <div class="rights-grid">
+          <div class="right-item"><span>👁️</span><span>Right to <strong>access</strong> the data we hold about you</span></div>
+          <div class="right-item"><span>✏️</span><span>Right to <strong>correct</strong> inaccurate personal data</span></div>
+          <div class="right-item"><span>🗑️</span><span>Right to <strong>erasure</strong> of your personal data</span></div>
+          <div class="right-item"><span>⏸️</span><span>Right to <strong>restrict</strong> certain data processing</span></div>
+          <div class="right-item"><span>📦</span><span>Right to <strong>data portability</strong></span></div>
+          <div class="right-item"><span>🚫</span><span>Right to <strong>object</strong> to certain uses of your data</span></div>
+          <div class="right-item"><span>↩️</span><span>Right to <strong>withdraw consent</strong> at any time</span></div>
+          <div class="right-item"><span>📋</span><span>Right to <strong>lodge a complaint</strong> with a supervisory authority</span></div>
+        </div>
+        <p style="margin-top:16px;">To exercise any of these rights, please contact us at <a href="mailto:support@cosmoinfotech.com" style="color:var(--accent);">support@cosmoinfotech.com</a>. We aim to respond to all requests within <strong>30 days</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 10. WEBHOOKS -->
+    <div class="policy-card" id="webhooks">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🔗</div>
+          <h2>Shopify Compliance Webhooks</h2>
+          <span class="section-num">10</span>
+        </div>
+        <p>As required by Shopify, our app subscribes to and responds to mandatory compliance webhooks. These ensure merchant and customer data rights are honored at the platform level:</p>
+        <div class="webhook-list">
+          <div class="webhook-item">
+            <span class="webhook-tag">customers/data_request</span>
+            <p>When a customer requests their data from a store owner, we provide all relevant customer data to the merchant directly.</p>
+          </div>
+          <div class="webhook-item">
+            <span class="webhook-tag">customers/redact</span>
+            <p>When a store owner requests deletion of a customer's data on their behalf, we permanently erase that data from our systems.</p>
+          </div>
+          <div class="webhook-item">
+            <span class="webhook-tag">shop/redact</span>
+            <p>48 hours after a merchant uninstalls the app, all shop data is permanently deleted from our database.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. CHILDREN -->
+    <div class="policy-card" id="children">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">👶</div>
+          <h2>Children's Privacy</h2>
+          <span class="section-num">11</span>
+        </div>
+        <p>Our Service is designed exclusively for Shopify merchants (businesses) and does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+        <p>If you are a parent or guardian and believe your child has provided us with Personal Data, please contact us immediately at <a href="mailto:support@cosmoinfotech.com" style="color:var(--accent);">support@cosmoinfotech.com</a>. If we become aware of such collection without verifiable parental consent, we will take prompt steps to remove that information from our servers.</p>
+      </div>
+    </div>
+
+    <!-- 12. LINKS -->
+    <div class="policy-card" id="links">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🔗</div>
+          <h2>Links to Other Websites</h2>
+          <span class="section-num">12</span>
+        </div>
+        <p>Our Service may contain links to third-party websites or services not operated by us. If you click a third-party link, you will be directed to that site. We strongly advise reviewing the Privacy Policy of every external site you visit.</p>
+        <p>We have no control over, and assume no responsibility for, the content or privacy practices of any third-party sites or services.</p>
+      </div>
+    </div>
+
+    <!-- 13. CHANGES -->
+    <div class="policy-card" id="changes">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">🔄</div>
+          <h2>Changes to This Policy</h2>
+          <span class="section-num">13</span>
+        </div>
+        <p>We may update this Privacy Policy from time to time. When we do, we will notify you by posting the revised policy on this page and updating the "Last updated" date at the top.</p>
+        <p>For significant changes, we will provide notice via email to your registered merchant email address or through a prominent in-app notification, prior to the change becoming effective.</p>
+        <p>You are advised to review this Privacy Policy periodically. Continued use of the Service after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-card" id="contact">
+      <div class="contact-icon">📬</div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>For any privacy-related questions, data requests, or concerns about this policy — reach out and we'll respond within 30 days.</p>
+        <a class="contact-email" href="mailto:support@cosmoinfotech.com">
+          ✉️ &nbsp;support@cosmoinfotech.com
+        </a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2026 <span>Cosmoverse Apps</span> · Cosmo Customer Account · All rights reserved.
+</footer>
+
+</body>
+</html>
